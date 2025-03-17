@@ -2,7 +2,7 @@
 
 This project uses the **K-Nearest Neighbors (KNN)** algorithm to classify cars based on various features such as buying price, maintenance cost, number of doors, seating capacity, luggage space, and safety ratings. The dataset is preprocessed, and the model is trained to predict the car's classification.
 
-## KNN.py Overview
+## KNN.py aka Normal KNN Prediction Data Evaluation Overview
 
 ### **1. Importing Libraries**
 - **scikit-learn**: Used for machine learning functionalities like KNN classification and data preprocessing.
@@ -56,7 +56,7 @@ This graph helps to **identify mismatches between actual and predicted classific
 
 ---
 
-## KNN-Serialized.py Overview
+## KNN-Serialized.py aka Serialized KNN Prediction Data Evaluation Overview
 
 This script is an optimized version of `KNN.py` with additional enhancements.
 
@@ -73,9 +73,43 @@ This script is an optimized version of `KNN.py` with additional enhancements.
 - Y-axis labels are mapped to class names for better readability.
 - Grid lines are added to enhance visualization.
 
+## KNN Classification Serialized Prediction Data Evaluation : Actual vs Prediction
+
+![KNN Classification: Actual vs Prediction](https://github.com/Ahnuf-Karim-Chowdhury/Car-Evaluation-Prediction-using-KNN/blob/main/Approach%20-%2001%20-%20Training%20it%20Newly%20Evrey%20Iteration/Result%20Prediction/Serialized%20Prediction%20Data%20Evaluation.png?raw=true)
+
+This visualization represents the **comparison between actual car evaluation classifications and the predictions made by the K-Nearest Neighbors (KNN) algorithm**.
+
+### **Explanation of the Plot**
+- **X-Axis:** Represents the test index of the car evaluation dataset.
+- **Y-Axis:** Represents the classification labels of the cars, such as `Good`, `Inaccurate`, `Excellent`, and `Accurate`.
+- The **blue dots** represent the actual classifications.
+- The **green crosses and lines** represent the predictions made by the KNN model.
+- The lines connecting the points indicate differences between actual and predicted classifications.
+
+### **How It Works**
+1. **Dataset Preparation:**  
+   - The dataset is preprocessed, and categorical features are converted into numerical values.  
+   - This ensures the data is compatible with the KNN algorithm.
+
+2. **Model Training and Prediction:**  
+   - The KNN model is trained using a predefined number of neighbors (`n_neighbors=8`).  
+   - Predictions are made on the test dataset.
+
+3. **Result Evaluation:**  
+   - Predictions are compared with actual classifications to determine accuracy.  
+   - Any discrepancies are noted and analyzed.
+
+4. **Visualization:**  
+   - Actual values are plotted as **blue dots**, representing the correct classifications.  
+   - Predicted values are shown as **green crosses**, with lines connecting them to the actual values.  
+   - This helps in identifying where predictions align or differ from the actual classifications.
+
+This graph serves as a **visual representation of the model's performance**, highlighting areas where the KNN algorithm performs well and where it could potentially be improved.
+
+
 ---
 
-## Key Differences Between `KNN.py` and `KNN-Serialized.py`
+## Key Differences Between `Normal-KNN(KNN.py)` and `Serialized-KNN(KNN-Serialized.py)`
 | Feature | `KNN.py` | `KNN-Serialized.py` |
 |---------|---------|---------------------|
 | Prediction Format | Uses list of names for display | Uses a dictionary for mapping class names |
