@@ -1,6 +1,14 @@
 # Car Evaluation Prediction using KNN
 
+---
+
 This project uses the **K-Nearest Neighbors (KNN)** algorithm to classify cars based on various features such as buying price, maintenance cost, number of doors, seating capacity, luggage space, and safety ratings. The dataset is preprocessed, and the model is trained to predict the car's classification.
+
+---
+
+## Approach - 01 - Training it Newly Every Iteration
+
+--- 
 
 ## KNN.py aka Normal KNN Prediction Data Evaluation Overview
 
