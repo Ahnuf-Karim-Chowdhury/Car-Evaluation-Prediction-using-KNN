@@ -127,3 +127,140 @@ This graph serves as a **visual representation of the model's performance**, hig
 
 Both scripts efficiently classify cars based on KNN, with `KNN-Serialized.py` offering a more structured approach and improved visualization.
 However, Approach - 01 it can be computationally expensive since it disregards past learning and requires full retraining each time.
+
+
+---
+
+## Approach - 02 - Saving the Most Accurate Data
+
+--- 
+
+## KNN-Training.py
+
+This script is responsible for **training the KNN model** and saving it for later use.
+
+### How It Works:
+1. **Data Preprocessing:**
+   - The `car.data` dataset is loaded using `pandas`.
+   - Categorical values (e.g., "buying," "maint," "door") are converted into numerical values using `LabelEncoder` from `sklearn.preprocessing`.
+   - Features (X) are extracted by zipping relevant attributes such as "buying," "maint," and "safety."
+   - Labels (Y) are assigned from the "class" column.
+
+2. **Training the KNN Model:**
+   - The data is split into training and testing sets using `train_test_split` with a test size of 10%.
+   - A KNN classifier (`KNeighborsClassifier`) is initialized with `n_neighbors=8`.
+   - The model is trained using the training set (`x_train` and `y_train`).
+
+3. **Model Persistence:**
+   - The trained model is serialized and saved to a file (`knn_model.pickle`) using Python's `pickle` module.
+   - This ensures the model can be reused without retraining.
+
+4. **Accuracy Calculation:**
+   - The accuracy of the trained model is computed using the testing set.
+
+## KNN Classification Prediction Graph: Actual vs Prediction
+
+This graph provides a **visual comparison** between the actual classifications of car evaluations and the predictions made by the K-Nearest Neighbors (KNN) algorithm.
+
+![KNN Classification: Actual vs Prediction](https://github.com/Ahnuf-Karim-Chowdhury/Car-Evaluation-Prediction-using-KNN/blob/main/Approach%20-%2002%20-%20Saving%20the%20Most%20Accurate%20Data/Result%20Predictions/Predicted%20Data%20Graphical%20Representation.png?raw=true)
+
+---
+
+### **How the Graph Works**
+1. **X-Axis: Car Evaluation Test Index**
+   - Represents individual instances or test cases in the dataset.
+   - Each index corresponds to a specific car evaluation entry.
+
+2. **Y-Axis: Class**
+   - Represents the classification categories for car evaluations.
+   - Classes include:
+     - **Good**
+     - **Inaccurate**
+     - **Excellent**
+     - **Accurate**
+
+3. **Data Points:**
+   - **Blue circles** represent the **actual classifications** of the cars in the dataset.
+   - **Orange crosses** represent the **predicted classifications** made by the KNN model.
+
+4. **Connections:**
+   - Lines connect the data points (actual vs. predicted) for each test index.
+   - Alignment between the circles and crosses indicates **accurate predictions**.
+   - Discrepancies between them highlight **prediction errors** by the model.
+
+---
+
+### **Explanation of the Plot**
+- **Purpose:** The plot evaluates the performance of the KNN model by comparing its predictions with actual classifications from the dataset.
+- **Observations:**
+  - A high degree of overlap between the blue circles and orange crosses signifies that the model has made correct predictions.
+  - Mismatches indicate where the model's predictions differ from the actual classifications, pinpointing areas for improvement.
+
+---
+
+### **Graph Utility**
+This visualization helps:
+- Assess the overall accuracy of the KNN model.
+- Identify specific test cases where the model struggles to provide correct predictions.
+- Highlight trends or patterns in the dataset that might affect the model’s performance.
+
+By analyzing this graph, developers can fine-tune the model and address discrepancies for better accuracy in future iterations.
+
+
+---
+
+## KNN-RunFile.py
+
+This script **evaluates the saved KNN model** and visualizes its predictions.
+
+### How It Works:
+1. **Loading Data and Model:**
+   - The `car.data` dataset is preprocessed in the same way as in the training script.
+   - The serialized model (`knn_model.pickle`) is loaded using `pickle`.
+
+2. **Prediction and Accuracy:**
+   - The model predicts classifications based on the feature set (X).
+   - Accuracy is calculated by comparing the predicted classifications with the actual values.
+
+3. **Visualization:**
+   - **Matplotlib** is used to plot a comparison between actual classifications and predicted classifications.
+   - Actual values are plotted as circles (`marker="o"`), while predicted values are plotted as crosses (`marker="x"`).
+   - The graph provides a clear visual representation of how well the model performs.
+
+4. **Result Output:**
+   - The script outputs detailed comparisons, including predicted and actual labels for each instance.
+
+---
+
+## KNN-Serialized-RunFile.py
+
+This script is an **enhanced version** of `KNN-RunFile.py` with improved visualization and additional data transformations.
+
+### How It Works:
+1. **Class Label Mapping:**
+   - A dictionary is used to map class names (`"Inaccurate", "Accurate", "Good", "Excellent"`) to numerical values (`0, 1, 2, 3`) for better visualization.
+
+2. **Visualization Enhancements:**
+   - The Y-axis uses numeric class values, with corresponding labels added as `yticks`.
+   - Enhanced graph styling makes the comparison between actual and predicted values more intuitive.
+   - Gridlines improve readability of the plot.
+
+3. **Result Evaluation:**
+   - Numeric and textual comparisons between actual and predicted values are displayed for easy interpretation.
+
+---
+
+## Summary of Features
+
+| Script                  | Purpose                          | Key Features                                                |
+|-------------------------|----------------------------------|------------------------------------------------------------|
+| **KNN-Training.py**      | Trains the KNN model             | Data preprocessing, model training, and saving the model.   |
+| **KNN-RunFile.py**       | Evaluates the saved model        | Predictions, accuracy calculation, and basic visualization. |
+| **KNN-Serialized-RunFile.py** | Enhanced model evaluation      | Visualization with numeric mapping and improved styling.    |
+
+This project demonstrates the use of **KNN for classification**, covering the complete workflow from data preprocessing to model training, evaluation, and visualization.
+
+
+
+
+
