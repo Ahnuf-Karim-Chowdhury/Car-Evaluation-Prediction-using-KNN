@@ -82,7 +82,7 @@ This script is an optimized version of `KNN.py` with additional enhancements.
 - Y-axis labels are mapped to class names for better readability.
 - Grid lines are added to enhance visualization.
 
-## KNN Classification Serialized Prediction Data Evaluation : Actual vs Prediction
+## KNN Classification Prediction Data Evaluation : Serialized Actual vs Prediction
 
 ![KNN Classification: Actual vs Prediction](https://github.com/Ahnuf-Karim-Chowdhury/Car-Evaluation-Prediction-using-KNN/blob/main/Approach%20-%2001%20-%20Training%20it%20Newly%20Evrey%20Iteration/Result%20Prediction/Serialized%20Prediction%20Data%20Evaluation.png?raw=true)
 
@@ -247,6 +247,85 @@ This script is an **enhanced version** of `KNN-RunFile.py` with improved visuali
 
 3. **Result Evaluation:**
    - Numeric and textual comparisons between actual and predicted values are displayed for easy interpretation.
+
+---
+
+## KNN Classification Prediction Graph: Serialized Actual vs Prediction
+
+This graph provides a **visual comparison** between the serialized actual classifications of car evaluations and the predictions made by the K-Nearest Neighbors (KNN) algorithm.
+
+![KNN Classification: Serialized Actual vs Prediction](https://github.com/Ahnuf-Karim-Chowdhury/Car-Evaluation-Prediction-using-KNN/blob/main/Approach%20-%2002%20-%20Saving%20the%20Most%20Accurate%20Data/Result%20Predictions/Seriialized%20Predicted%20Data%20Graphical%20Representation.png?raw=true)
+
+---
+
+### **How the Graph Works**
+1. **X-Axis: Car Evaluation Test Index**
+   - Represents the individual instances or test cases in the dataset.
+   - Each index corresponds to a specific car evaluation entry.
+
+2. **Y-Axis: Serialized Class**
+   - Represents the serialized classification categories for car evaluations.
+   - Classes are mapped to numerical values for better visualization:
+     - `0`: **Inaccurate**
+     - `1`: **Accurate**
+     - `2`: **Good**
+     - `3`: **Excellent**
+
+3. **Data Points:**
+   - **Blue circles** represent the **serialized actual classifications** of the cars in the dataset.
+   - **Orange crosses** represent the **serialized predictions** made by the KNN model.
+
+4. **Connections:**
+   - Lines connect the data points (actual vs. predicted) for each test index.
+   - Alignment between the circles and crosses indicates **accurate predictions**.
+   - Discrepancies between them highlight **prediction errors** by the model.
+
+---
+
+### **Explanation of the Plot**
+- **Purpose:** The plot evaluates the performance of the KNN model by comparing its serialized predictions with serialized actual classifications from the dataset.
+- **Observations:**
+  - The numerical mapping of the classifications makes it easier to identify trends and patterns.
+  - Alignment between blue circles (actual) and orange crosses (predictions) signifies correct classifications by the model.
+  - Deviations between the two indicate areas where the model predictions are inaccurate.
+
+---
+
+### **Graph Utility**
+This visualization helps:
+- Assess the performance and accuracy of the serialized KNN model.
+- Highlight specific test cases where there is a mismatch between actual and predicted classifications.
+- Identify areas where the model can be refined or improved for better predictions.
+
+By leveraging the serialized mapping, this plot offers a **structured approach to analyzing the KNN model's prediction accuracy**, making it easier to interpret results and identify discrepancies.
+
+---
+
+### **Comparison with the Non-Serialized Graph**
+
+#### **Serialized vs. Non-Serialized**
+| Feature                   | Non-Serialized Graph                      | Serialized Graph                       |
+|---------------------------|-------------------------------------------|----------------------------------------|
+| **Y-Axis Representation** | Class labels in text format (e.g., "Good", "Inaccurate") | Numeric mapping (0: Inaccurate, 1: Accurate, etc.) |
+| **Visualization Clarity** | Visual comparison of predictions and actuals, but less structured | Clear, structured numeric scale aiding analysis |
+| **Interpretation**        | Requires manual matching of text labels  | Numeric serialization simplifies trend identification |
+| **Graph Customization**   | Basic plot with minimal features         | Enhanced visualization with mapped classes |
+
+#### **Why the Serialized Graph is Better**
+1. **Structured Representation:**  
+   The serialized graph uses numeric mappings for class labels, making it easier to identify patterns and trends.
+   
+2. **Enhanced Visualization:**  
+   With clearer axes and mapped values, discrepancies between actual and predicted classifications are easier to spot.
+
+3. **Simplified Analysis:**  
+   Numeric serialization eliminates ambiguity when interpreting the Y-axis, making the graph more user-friendly.
+
+4. **Improved Readability:**  
+   The serialized graph includes structured ticks and labels, ensuring a cleaner visual representation, especially for large datasets.
+
+By moving from textual class labels to serialized numeric mappings, the serialized graph offers a more **professional, structured, and insightful evaluation of the KNN model's performance**.
+
 
 ---
 
