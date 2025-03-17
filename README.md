@@ -9,6 +9,7 @@ This project uses the **K-Nearest Neighbors (KNN)** algorithm to classify cars b
 ## Approach - 01 - Training it Newly Every Iteration
 
 --- 
+The Approach - 01 is a method where a model is trained from scratch in each iteration, without retaining any learned information from previous runs. This means the model starts with random weights every time and learns as if it's encountering the data for the first time. This approach is useful for testing consistency, avoiding bias from previous training, and ensuring fair comparisons in experimental setups.
 
 ## KNN.py aka Normal KNN Prediction Data Evaluation Overview
 
@@ -125,3 +126,4 @@ This graph serves as a **visual representation of the model's performance**, hig
 | Serialization | No explicit mapping | Uses `label_map` for structured mapping |
 
 Both scripts efficiently classify cars based on KNN, with `KNN-Serialized.py` offering a more structured approach and improved visualization.
+However, Approach - 01 it can be computationally expensive since it disregards past learning and requires full retraining each time.
